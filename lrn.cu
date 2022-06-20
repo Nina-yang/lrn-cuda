@@ -63,7 +63,7 @@ void LRNLayer::CrossChannelForward_gpu(const Blob* bottom, Blob* top){
   // First, compute scale
   const float* bottom_data = bottom->gpu_ptr;
   float* top_data = top->gpu_ptr;
-  float* scale_data = scale_.mutable_gpu_data();
+  float* scale_data = scale_->gpu_ptr;
 
   int n_threads = num_ * height_ * width_;
 
